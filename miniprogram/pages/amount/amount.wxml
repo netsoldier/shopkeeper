@@ -1,0 +1,37 @@
+<!--amount.wxml-->
+<wxs src="../common/filters.wxs" module="filters" />
+<view class="wrapper">
+  <!-- 头布局 -->
+  <view class="header-wrapper">
+    <view class="total">{{totalConsume}}</view>
+    <view class="content">
+      <view class="right-wrapper">
+        <view bindtap="showDatePicker">
+          <text class="btn-text">{{currentYear}}年{{currentMonth}}月</text>
+          <image class="btn-icon" src="/resource/images/type-icon/arrow.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="title van-hairline--bottom">支出构成</view>
+    <block wx:for="{{listArr}}" wx:for-item="item" wx:key="index">
+      <view class="cell van-hairline--bottom" data-item="{{item}}" bindtap="clickType">
+        
+       <view class="left">
+           <image src="/resource/images/type-icon/{{item._id.type_id}}-on.png"></image>
+          <text class="type_name">{{item._id.type_name}}</text>
+       </view>
+          <view class="right">
+           <text class="percentage">{{filters.toFloat((item.totalTypeConsume)*100/totalConsume)}}%</text>
+          <progress class="progresses" percent="{{(item.totalTypeConsume)*100/totalConsume}}" stroke-width="4" activeColor="#02a4ff" border-radius="6"/>
+          <text class="money">¥{{item.totalTypeConsume}}</text>
+          </view>
+
+      </view>
+    </block>
+  </view>
+</view>
+<van-popup show="{{ showPopUp }}" bind:close="onCloseDatePicker" position="bottom" catchtouchmove="return">
+  <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:cancel="onCloseDatePicker" bind:confirm="onConfirmDatePicker" />
+</van-popup>

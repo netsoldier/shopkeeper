@@ -1,0 +1,49 @@
+<!--components/date-popup/date-popup.wxml-->
+<van-popup show="{{ showPopUp }}" bind:close="onClose" position="bottom" custom-class="bg" catchtouchmove="return">
+
+  <view class="title van-hairline--bottom">请选择月份</view>
+
+  <scroll-view scroll-y="true" style="height: 480rpx;">
+
+    <block-title title="2020年">
+      <van-grid gutter="{{ 10 }}" clickable>
+        <van-grid-item data-year="2020" data-month="{{index+1}}" text="{{index+1}}月" wx:for="{{ 12 }}" wx:key="*this" bind:click="onClickMonth" />
+      </van-grid>
+    </block-title>
+
+    <!-- <block-title title="2019年" padding>
+      <van-row gutter="10">
+        <van-col span="6" custom-class="dark" bindtap="testClick">7月</van-col>
+        <van-col span="6" custom-class="light">8月</van-col>
+        <van-col span="6" custom-class="light">9月</van-col>
+        <van-col span="6" custom-class="light">10月</van-col>
+      </van-row>
+      <van-row gutter="10">
+        <van-col span="6" custom-class="light">11月</van-col>
+        <van-col span="6" custom-class="light">12月</van-col>
+      </van-row>
+    </block-title>
+
+    <block-title title="2020年" padding>
+      <van-row gutter="10">
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+      </van-row>
+      <van-row gutter="10">
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+      </van-row>
+      <van-row gutter="10">
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+        <van-col span="6" custom-class="light">1月</van-col>
+      </van-row>
+    </block-title> -->
+
+  </scroll-view>
+</van-popup>

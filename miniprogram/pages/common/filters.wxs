@@ -1,0 +1,23 @@
+var filters = {
+
+  toInt: function(value) {
+
+    var a = parseInt(value);
+    return a //整数
+
+  },
+
+  toFloat: function(value) {
+    var a = value.toFixed(2) //保留两位小数
+    return a
+  }
+
+
+}
+
+module.exports = {
+
+  toInt: filters.toInt,
+  toFloat:filters.toFloat
+
+}

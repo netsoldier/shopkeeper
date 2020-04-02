@@ -1,0 +1,23 @@
+/**app.wxss**/
+@import "/miniprogram_npm/@vant/weapp/common/index.wxss";
+
+/**全局设定背景色**/
+page {
+  background: #F3F3F3;
+}
+
+.page {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+} 
+
+button {
+  padding: 0;
+  border: 0;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+}

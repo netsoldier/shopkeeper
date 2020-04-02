@@ -1,0 +1,11 @@
+<!--components/type-popup/type-popup.wxml-->
+<van-popup show="{{ showPopUp }}" bind:close="onClose" position="bottom" custom-class="bg" catchtouchmove="return">
+  <view class="title van-hairline--bottom">请选择类型</view>
+  <scroll-view scroll-y="true" style="height: 480rpx;">
+    <van-grid gutter="{{ 10 }}" clickable>
+      <view class="mt20"></view>
+      <van-grid-item wx:for="{{typeArr}}" wx:for-item="item" wx:key="index" data-typeid="{{item.type_id}}" data-typename="{{item.type_name}}" text="{{item.type_name}}" bind:click="onClickType">
+      </van-grid-item>
+      </van-grid>
+  </scroll-view>
+</van-popup>

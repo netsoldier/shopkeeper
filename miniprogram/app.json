@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index", 
+    "pages/amount/amount", 
+    "pages/amount/list", 
+    "pages/detail/detail",
+    "pages/note/note"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#02a4ff",
+    "navigationBarTitleText": "掌柜记账",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#646566",
+    "selectedColor": "#02a4ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "resource/images/tabbar/icon-mx.png",
+        "selectedIconPath": "resource/images/tabbar/icon-mx-selected.png",
+        "text": "明细"
+      },
+      {
+        "pagePath": "pages/amount/amount",
+        "iconPath": "resource/images/tabbar/icon-tj.png",
+        "selectedIconPath": "resource/images/tabbar/icon-tj-selected.png",
+        "text": "统计"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-popup": "/@vant/weapp/popup",
+    "van-datetime-picker": "/@vant/weapp/datetime-picker/index",
+    "type-popup": "/components/type-popup/type-popup"
+  }
+}

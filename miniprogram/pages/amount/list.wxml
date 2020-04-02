@@ -1,0 +1,11 @@
+<view class="wrapper">
+  <!-- content布局 -->
+  <view class="list-wrapper van-hairline--bottom" wx:for="{{listArr}}" wx:for-item="item" wx:key="index" data-item="{{item}}">
+    <image class="list-type-icon" src="/resource/images/type-icon/{{item.type_id}}-on.png"></image>
+    <view class="list-content" style="margin-top:{{item.comment===''?'14rpx':'0'}}">
+      <view class="title">{{item.type_name}}</view>
+      <view class="note van-ellipsis" wx:if="{{item.comment}}">{{item.comment}}</view>
+    </view>
+    <text class="amount">{{item.amount}}</text>
+  </view>
+</view>

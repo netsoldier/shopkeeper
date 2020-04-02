@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "记一笔",
+  "usingComponents": {
+    "van-button": "/@vant/weapp/button/index",
+    "van-popup": "/@vant/weapp/popup",
+    "van-datetime-picker": "/@vant/weapp/datetime-picker/index"
+  }
+}

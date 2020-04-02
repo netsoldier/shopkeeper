@@ -1,0 +1,22 @@
+<view class="wrapper">
+  <view class="type">
+    <!-- wx-if 用来规避渲染页面，type为空，导致找不到图片报错 -->
+    <image wx-if="{{currentItem.type_id}}" src="/resource/images/type-icon/{{currentItem.type_id}}-on.png"></image>
+    <text class="title">{{currentItem.type_name}}</text>
+  </view>
+  <view class="money">-{{currentItem.amount}}</view>
+  <view class="list">
+    <text class="name">记录时间</text>
+    <text class="content">{{currentItem.consume_time}}</text>
+  </view>
+  <view class="list" wx:if="{{currentItem.comment}}">
+    <text class="name">备注</text>
+    <text class="content">{{currentItem.comment}}</text>
+  </view>
+  <view class="operation">
+    <van-button plain hairline type="primary" custom-style="width: 300rpx" color="red" bind:click="clickDelete">删除</van-button>
+    <van-button plain hairline type="primary" custom-style="width: 300rpx" bind:click="clickEdit">编辑</van-button>
+  </view>
+  <van-dialog id="van-dialog" />
+
+</view>

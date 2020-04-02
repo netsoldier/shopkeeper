@@ -1,0 +1,29 @@
+<view class="wrapper">
+  <view class="pick-date" bindtap="showDatePicker">
+    <text class="btn-text">{{currentYear}}年{{currentMonth}}月{{currentDay}}日</text>
+    <image class="btn-icon" src="/resource/images/type-icon/arrow.png"></image>
+  </view>
+
+  <view class="input-money">
+    <text>¥</text>
+    <input value="{{money}}" placeholder="请输入消费金额" type="digit" maxlength='10' bindinput="getInputMoney"></input>
+  </view>
+
+  <scroll-view scroll-into-view="view-{{currentSelectType}}" class="scroll-type van-hairline--top van-hairline--bottom" scroll-x="true">
+    <view id="view-{{item.type_id}}" class="item" wx:for="{{listArr}}" wx:for-item="item" wx:key="index" bindtap="doSelectType" data-item="{{item}}">
+      <image class="img" src="/resource/images/type-icon/{{currentSelectType===item.type_id?item.type_id+'-on':item.type_id}}.png"></image>
+      <view class="title {{currentSelectType===item.type_id?'title-selected':''}}">{{item.type_name}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="remark">
+    <textarea value="{{remark}}" auto-height placeholder="请输入备注内容（限60字）" maxlength="60" cursor-spacing='10' bindinput="getInputRemark" />
+  </view>
+
+  <van-button custom-class="btn-sure" bind:click="clickSure">确定</van-button>
+</view>
+
+<!-- 时间组件 -->
+<van-popup show="{{ showPopUp }}" bind:close="onCloseDatePicker" position="bottom" custom-class="bg" catchtouchmove="return">
+  <van-datetime-picker type="date" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:cancel="onCloseDatePicker" bind:confirm="onConfirmDatePicker" />
+</van-popup>

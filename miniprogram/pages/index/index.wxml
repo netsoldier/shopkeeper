@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="wrapper">
+  <!-- 头布局 -->
+  <view class="header-wrapper">
+    <view class="total">{{money}}</view>
+    <view class="content">
+      <view class="left-wrapper">
+        <view bindtap="doShowTypePopup">
+          <text class="btn-text">{{currentTypeName}}</text>
+          <image class="btn-icon" src="/resource/images/type-icon/arrow.png"></image>
+        </view>
+        <type-popup showPopUp="{{ showTypePopup }}" bind:gettypevalue="onSelectType"></type-popup>
+      </view>
+      <view class="right-wrapper">
+        <view bindtap="showDatePicker">
+          <text class="btn-text">{{currentYear}}年{{currentMonth}}月</text>
+          <image class="btn-icon" src="/resource/images/type-icon/arrow.png"></image>
+        </view>
+
+        <!-- <date-popup showPopUp="{{ showDatePopup }}" bind:getyearandmonth="onSelectYearAndMonth"></date-popup> -->
+      </view>
+    </view>
+  </view>
+  <!-- content布局 -->
+  <view bindtap="goItemDetail" class="list-wrapper van-hairline--bottom" wx:for="{{listArr}}" wx:for-item="item" wx:key="index" data-item="{{item}}">
+    <image class="list-type-icon" src="/resource/images/type-icon/{{item.type_id}}-on.png"></image>
+    <view class="list-content" style="margin-top:{{item.comment===''?'14rpx':'0'}}">
+      <view class="title">{{item.type_name}}</view>
+      <view class="note van-ellipsis" wx:if="{{item.comment}}">{{item.comment}}</view>
+    </view>
+    <text class="amount">{{item.amount}}</text>
+  </view>
+
+  <!-- footer布局 -->
+  <navigator url="/pages/note/note" class="footer-wrapper" hover-class="add-hover">
+    <image class="add-icon" src="/resource/images/add.png"></image>
+  </navigator>
+</view>
+<van-popup show="{{ showDatePopup }}" bind:close="onCloseDatePicker" position="bottom"  catchtouchmove="return">
+  <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:cancel="onCloseDatePicker" bind:confirm="onConfirmDatePicker" />
+</van-popup>

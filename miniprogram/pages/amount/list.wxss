@@ -1,0 +1,36 @@
+.list-wrapper {
+  height: 70rpx;
+  padding: 30rpx 40rpx;
+  clear:both;
+}
+
+.list-wrapper .list-type-icon {
+  width: 50rpx;
+  height: 50rpx;
+  float:left;
+  margin-top:10rpx;
+}
+
+.list-wrapper .list-content {
+  max-width: 330rpx;
+  float:left;
+  margin-left:30rpx;
+  color: #646566;
+}
+
+.list-wrapper .list-content .title {
+  font-size: 30rpx;
+}
+
+.list-wrapper .list-content .note {
+  font-size: 26rpx;
+  color: #9e9e9e;
+}
+
+.list-wrapper .amount {
+  float:right;
+  margin-right: 20rpx;
+  margin-top:15rpx;
+  font-size: 30rpx;
+  color: #646566;
+}

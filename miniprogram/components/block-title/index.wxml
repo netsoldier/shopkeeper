@@ -1,0 +1,5 @@
+<!--components/block-title/index.wxml-->
+<view class="custom-class demo-block van-clearfix {{ padding ? 'demo-block--padding' : '' }}">
+  <view wx:if="{{ title }}" class="demo-block__title">{{ title }}</view>
+  <slot />
+</view>
